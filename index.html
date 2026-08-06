@@ -19,6 +19,15 @@
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th { background: #4169E1; color: white; text-align: left; padding: 15px; }
         td { padding: 15px; border-bottom: 1px solid #e2e8f0; font-size: 0.9rem; line-height: 1.5; }
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Habilita el desplazamiento suave en dispositivos iOS */
+            margin-top: 20px;
+        }
+        .table-responsive table {
+            margin-top: 0;
+        }
         .highlight-text { font-weight: 700; color: #4169E1; }
         .tooltip-custom { padding: 10px; line-height: 1.6; font-size: 12px; }
         /* Estilos para el Navbar Principal */
@@ -110,12 +119,19 @@
 
         <div class="card">
             <h3>4. Glosario de Conceptos de Banxico & Analogías</h3>
-            <table>
-                <thead>
-                    <tr><th>Variable</th><th>Definición Original (Banxico)</th><th>Analogía Petrolera / Finanzas</th></tr>
-                </thead>
-                <tbody id="glossary-content"></tbody>
-            </table>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width: 150px;">Variable</th>
+                            <th style="min-width: 300px;">Definición Original (Banxico)</th>
+                            <th style="min-width: 250px;">Analogía Petrolera / Finanzas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="glossary-content"></tbody>
+                </table>
+            </div>
+            
             <p style="text-align: right; font-size: 0.8rem; color: #64748b; margin-top: 10px;">
                 Fuente: <a href="https://www.banxico.org.mx" target="_blank" style="color: #4169E1; text-decoration: none; font-weight: 600;">Banxico</a>
             </p>
